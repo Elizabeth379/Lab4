@@ -1,6 +1,7 @@
 from django.http import HttpResponse, HttpResponseNotFound, Http404
 from django.shortcuts import render, redirect
 from django.views.generic import ListView
+from django.views.generic import TemplateView
 
 from .models import *
 import random
@@ -9,6 +10,13 @@ from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import CreateView
 
+
+class Main(ListView):
+    model = Medication
+    template_name = 'medicines/main.html'
+    context_object_name = 'posts'
+    def get_queryset(self):
+        return Medication.objects.filter(is_available=True).order_by('-id')[:1]
 
 class MedList(ListView):
     model = Medication

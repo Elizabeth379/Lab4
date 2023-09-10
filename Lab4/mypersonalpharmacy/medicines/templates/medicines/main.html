@@ -1,0 +1,49 @@
+{% extends 'medicines/layout.html' %}
+{% load static %}
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+    <h2 align="middle">Баннер нашей компании</h2>
+    <hr/>
+    <center>
+        <img src="{% static 'medicines/images/banner.png' %}"/>
+    </center>
+    <hr/>
+    <h2 align="middle">Последнее добавленное лекарство</h2>
+    <hr/>
+    <div align="middle"><ul>
+      {% for p in posts %}
+            {% if forloop.last %}
+            <li><div class="article-panel">
+              <p class="first">Вид препарата: {{p.category}}</p>
+                <p class="last">Стоимость: {{p.price}}</p>
+            </div>
+                <h2>{{p.title}}</h2>
+                {% autoescape on %}
+              {{p.supplier}}
+              {% endautoescape %}
+      <div class="clear"></div>
+      <p class="link-read-post"><a href="{{ p.get_absolute_url }}" class="btn btn-warning">Купить</a></p>
+            {% endif %}
+        {% endfor %}
+
+    </ul></div>
+    <hr/>
+    </ul>
+    <hr/>
+    <h2 align="middle">Наши спонсоры</h2>
+    <hr/>
+    <p align="middle">
+        <a href="https://belarusbank.by/ru/fizicheskim_licam/31886/internet_banking">
+            <img src="{% static 'medicines/images/belarusbank_logo.jpg' %}" width="60" height="50" alt="Пример">
+        </a>
+        <a href="https://www.belinvestbank.by/individual">
+            <img src="static/mainapp/images/belinvest_logo.png" width="60" height="50" alt="Пример">
+        </a>
+        <a href="https://www.alfabank.by/">
+            <img src="static/mainapp/images/alfa_log.png" width="60" height="50" alt="Пример">
+        </a>
+    </p>
+
+
+{% endblock %}
