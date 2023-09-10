@@ -15,5 +15,6 @@ urlpatterns = [
     path('no_avail/', views.NoAvailable.as_view(), name='no_avail'),
     path('w_registr/', views.w_registr, name='w_registr'),
     path('medhomew/', views.MedWithoutHome.as_view(), name='medhomew'),
-    path('main/', views.Main.as_view(), name='main' )
+    path('main/', views.Main.as_view(), name='main'),
+    path('company', views.Company.as_view(), name='company')
 ]

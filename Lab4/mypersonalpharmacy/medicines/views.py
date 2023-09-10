@@ -11,6 +11,9 @@ from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import CreateView
 
 
+class Company(TemplateView):
+    template_name = 'medicines/company.html'
+
 class Main(ListView):
     model = Medication
     template_name = 'medicines/main.html'
@@ -68,7 +71,7 @@ def about(request):
     response = requests.get('https://dog.ceo/api/breeds/image/random')
     image_url = response.json()['message']
     context = {
-        'title': 'О нас',
+        'title': 'Мы Вас любим',
         'image_url': image_url,
     }
     return render(request, 'medicines/about.html', context)
