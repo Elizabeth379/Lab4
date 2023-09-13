@@ -11,9 +11,13 @@ from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import CreateView
 
 
+class PrivacyPolicy(TemplateView):
+    template_name = 'medicines/privacy_policy.html'
+
 
 class News(TemplateView):
     template_name = 'medicines/news.html'
+
 
 class Company(TemplateView):
     template_name = 'medicines/company.html'

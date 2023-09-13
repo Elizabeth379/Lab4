@@ -15,5 +15,6 @@ urlpatterns = [
     path('no_avail/', views.NoAvailable.as_view(), name='no_avail'),
     path('main/', views.Main.as_view(), name='main'),
     path('company/', views.Company.as_view(), name='company'),
-    path('news/', views.News.as_view(), name='news')
+    path('news/', views.News.as_view(), name='news'),
+    path('privacypolicy/', views.PrivacyPolicy.as_view(), name='privacy_policy')
 ]
