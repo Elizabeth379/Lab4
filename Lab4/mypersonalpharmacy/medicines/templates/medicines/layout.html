@@ -35,6 +35,9 @@
         <h3>Навигация</h3>
         <ul>
             <a href="{% url 'main' %}"><li><i class="fas fa-house-medical"></i>Главная</li></a>
+            {% if user.is_superuser %}
+                <a href=" http://127.0.0.1:8000/admin" target="_blank"><li><i class="fas fa-house-medical"></i>Админка</li></a>
+            {% endif %}
             <a href="{% url 'company' %}"><li><i class="fas-sharp fa-solid fa-heart-pulse"></i>О нас ^_^</li></a>
             {% if user.is_authenticated %}
                 <a href="{% url 'news' %}"><li><i class="fas fa-house-medical"></i>Новости</li></a>
