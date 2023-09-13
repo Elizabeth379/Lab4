@@ -3,11 +3,11 @@
 {% block title %}Список лекарств{% endblock %}
 
 {% block content %}
-<div class="features">
+<div>
     <h1>Список лекарств</h1>
     {% if posts %}
         {% for p in posts %}
-            <div class="alert alert-warning">
+            <div><!--class="alert alert-warning" -->
                 <h3>{{p.title}}</h3>
                 <p>{{p.content|linebreaks}}</p>
                 <p>Категория: {{p.category}}</p>
@@ -16,7 +16,9 @@
                 {% if p.photo %}
                     <p><img class="img-left thumb" src="{{p.photo.url}}"></p>
                 {% endif %}
-                <a href="{{ p.get_absolute_url }}" class="btn btn-warning">Купить</a>
+                {% if user.is_authenticated %}
+                    <a href="{{ p.get_absolute_url }}">Купить</a>
+                {% endif %}
                 <hr>
             </div>
           {% endfor %}

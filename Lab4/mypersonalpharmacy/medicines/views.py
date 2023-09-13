@@ -105,17 +105,3 @@ def thanks(request, thanks_id):
     return render(request, 'medicines/thanks.html', {'posts': posts, 'title': 'Куплено'})
 
 
-def w_registr(request):
-    return render(request, 'medicines/w_registr.html', {'title': 'Добро пожаловать!'})
-
-
-def medhomew(request):
-    posts = Medication.objects.order_by('title')
-    return render(request, 'medicines/medhomew.html', {'posts': posts, 'title': 'Лекарства'})
-
-
-class MedWithoutHome(ListView):
-    model = Medication
-    template_name = 'medicines/medhomew.html'
-    context_object_name = 'posts'
-    ordering = ('title', )

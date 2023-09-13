@@ -3,11 +3,11 @@
 {% block title %}Аптеки{% endblock %}
 
 {% block content %}
-<div class="features">
+<div>
     <h1>Аптеки</h1>
     {% if posts %}
         {% for p in posts %}
-            <div class="alert alert-warning">
+            <div> <!-- class="alert alert-warning"> -->
                 <h3>{{p.name}}</h3>
                 <p>Адрес: {{p.location}}</p>
                 <hr>

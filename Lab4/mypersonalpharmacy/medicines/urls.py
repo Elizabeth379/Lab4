@@ -13,8 +13,6 @@ urlpatterns = [
     path('bying/<int:bying_id>/', views.bying, name='bying'),
     path('thanks/<int:thanks_id>/', views.thanks, name='thanks'),
     path('no_avail/', views.NoAvailable.as_view(), name='no_avail'),
-    path('w_registr/', views.w_registr, name='w_registr'),
-    path('medhomew/', views.MedWithoutHome.as_view(), name='medhomew'),
     path('main/', views.Main.as_view(), name='main'),
-    path('company', views.Company.as_view(), name='company')
+    path('company/', views.Company.as_view(), name='company')
 ]
