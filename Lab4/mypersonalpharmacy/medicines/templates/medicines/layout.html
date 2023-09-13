@@ -21,6 +21,9 @@
             <a href="{% url 'main' %}"><li><i class="fas fa-house-medical"></i>Главная</li></a>
             <a href="{% url 'company' %}"><li><i class="fas-sharp fa-solid fa-heart-pulse"></i>О нас ^_^</li></a>
             {% if user.is_authenticated %}
+                <a href="{% url 'news' %}"><li><i class="fas fa-house-medical"></i>Новости</li></a>
+            {% endif %}
+            {% if user.is_authenticated %}
                 <a href="{% url 'about' %}"><li><i class="fas-sharp fa-solid fa-heart-pulse"></i>Мы любим Вас</li></a>
             {% endif %}
             <a href="{% url 'medlist' %}"><li><i class="fas fa-pills"></i>Список лекарств</li></a>

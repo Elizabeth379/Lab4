@@ -14,5 +14,6 @@ urlpatterns = [
     path('thanks/<int:thanks_id>/', views.thanks, name='thanks'),
     path('no_avail/', views.NoAvailable.as_view(), name='no_avail'),
     path('main/', views.Main.as_view(), name='main'),
-    path('company/', views.Company.as_view(), name='company')
+    path('company/', views.Company.as_view(), name='company'),
+    path('news/', views.News.as_view(), name='news')
 ]
