@@ -1,0 +1,19 @@
+{% extends 'medicines/layout.html' %}
+{% load static %}
+{% block title %}Вакансии{% endblock %}
+
+{% block content %}
+<center>
+    <h1>Доступные вакансии</h1>
+    <ul class="list-articles">
+	    {% for p in posts %}
+            <li>
+			    <h2>{{ p.name }}</h2>
+			    {% autoescape on %}
+			    <p>{{p.description|linebreaks}}</p>
+                <p>Зарплата: {{p.salary|linebreaks}} рублей в месяц<p/>
+			    {% endautoescape %}
+	    {% endfor %}
+</center>
+</ul>
+{% endblock %}

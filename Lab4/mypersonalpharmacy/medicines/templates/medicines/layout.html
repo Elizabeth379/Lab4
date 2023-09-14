@@ -48,6 +48,9 @@
             <a href="{% url 'medlist' %}"><li><i class="fas fa-pills"></i>Список лекарств</li></a>
             <a href="{% url 'pharms' %}"><li><i class="fas fa-map-pin"></i>Список физических аптек</li></a>
             {% if user.is_authenticated %}
+                <a href="{% url 'vacancies' %}"><li><i class="fas-sharp fa-solid fa-heart-pulse"></i>Вакансии</li></a>
+            {% endif %}
+            {% if user.is_authenticated %}
                 <a href="{% url 'home' %}"><li><i class="fas fa-right-from-bracket"></i>Выход</li></a>
             {% else %}
                 <a href="{% url 'login' %}"><li><i class="fas fa-right-from-bracket"></i>Вход</li></a>
