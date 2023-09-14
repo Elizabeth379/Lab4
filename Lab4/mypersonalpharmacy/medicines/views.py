@@ -11,6 +11,15 @@ from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import CreateView
 
 
+class FAQs(ListView):
+    model = FAQ
+    template_name = 'medicines/faqs.html'
+    context_object_name = 'posts'
+
+    def get_queryset(self):
+        return FAQ.objects.all()
+
+
 class Vacancies(ListView):
     model = Vacancy
     template_name = 'medicines/vacancies.html'

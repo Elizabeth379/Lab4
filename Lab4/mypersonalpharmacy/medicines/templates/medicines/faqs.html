@@ -1,0 +1,15 @@
+{% extends 'medicines/layout.html' %}
+{% block title %}Часто задаваемые вопросы{% endblock %}
+
+{% block content %}
+    <h1>Часто задаваемые вопросы</h1>
+    {% for p in posts %}
+        <hr/>
+        <details>
+            <summary><h2>{{ p.question }}</h2></summary>
+            <p>{{p.answer}}</p>
+            <p>{{p.date}}</p>
+        </details>
+    {% endfor %}
+
+{% endblock %}
