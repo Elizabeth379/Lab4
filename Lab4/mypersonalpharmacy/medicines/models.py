@@ -43,7 +43,7 @@ class Department(models.Model):
 class Employee(models.Model):
     name = models.CharField(max_length=100, verbose_name='Имя')
     department = models.ForeignKey(Department, on_delete=models.CASCADE, verbose_name='Место работы')
-    photo = models.ImageField(upload_to="photos/%Y/%n/%d/", blank=True)
+    photo = models.ImageField(upload_to="static/medicines/photos", blank=True)
     description = models.TextField(blank=True, verbose_name='Описание выполняемых работ')
     phone_number = models.CharField(max_length=20, verbose_name='Телефонный номер', null=True)
     email = models.CharField(max_length=20, verbose_name='Почта', null=True)
@@ -156,4 +156,13 @@ class FeedBack(models.Model):
         ], verbose_name='Рейтинг')
     feedback = models.TextField(blank=True, null=True, verbose_name='Отзыв')
     time_create = models.DateTimeField(auto_now_add=True, verbose_name='Время создания')
+
+
+class News(models.Model):
+    name = models.CharField(max_length=100, verbose_name='Заголовок')
+    summary = models.TextField(blank=True, verbose_name='Краткое содержание')
+    article = models.TextField(blank=True, verbose_name='Вся статья')
+    image = models.ImageField(upload_to="static/medicines/images/news", blank=True)
+
+
 
