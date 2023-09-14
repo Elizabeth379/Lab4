@@ -1,0 +1,32 @@
+{% extends 'medicines/layout.html' %}
+{% block title %}Сотрудники{% endblock %}
+
+{% block content %}
+    <h1>Наши сотрудники всегда готовы Вам помочь!</h1>
+    <table border="1">
+        <tr>
+        <th>Фото</th>
+        <th>Контакты</th>
+        </tr>
+
+            {% for p in posts %}
+
+                <tr>
+                    <td>
+                        {% if p.photo %}
+                            <p><img src="{{ p.photo.url }}"></p>
+                        {% endif %}
+                    </td>
+                    <td>
+                        <p>{{p.name}}</p>
+                        <p>{{p.description}}</p>
+                        <p>{{p.phone_number}}</p>
+                        <p>{{p.email}}</p>
+                    </td>
+                </tr>
+
+            {% endfor %}
+
+    </table>
+
+{% endblock %}

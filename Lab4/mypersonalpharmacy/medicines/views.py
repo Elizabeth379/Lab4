@@ -11,6 +11,15 @@ from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import CreateView
 
 
+class Employees(ListView):
+    model = Employee
+    template_name = 'medicines/employees.html'
+    context_object_name = 'posts'
+
+    def get_queryset(self):
+        return Employee.objects.all()
+
+
 class Coupons(ListView):
     model = Coupon
     template_name = 'medicines/coupons.html'
