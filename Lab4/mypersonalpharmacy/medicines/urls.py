@@ -18,5 +18,6 @@ urlpatterns = [
     path('news/', views.News.as_view(), name='news'),
     path('privacypolicy/', views.PrivacyPolicy.as_view(), name='privacy_policy'),
     path('vacancies/', views.Vacancies.as_view(), name='vacancies'),
-    path('faqs/', views.FAQs.as_view(), name='faqs')
+    path('faqs/', views.FAQs.as_view(), name='faqs'),
+    path('coupons/', views.Coupons.as_view(), name='coupons')
 ]

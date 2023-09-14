@@ -51,6 +51,9 @@
                 <a href="{% url 'vacancies' %}"><li><i class="fas-sharp fa-solid fa-heart-pulse"></i>Вакансии</li></a>
             {% endif %}
             {% if user.is_authenticated %}
+                <a href="{% url 'coupons' %}"><li><i class="fas fa-map-pin"></i>Купоны и промокоды</li></a>
+            {% endif %}
+            {% if user.is_authenticated %}
                 <a href="{% url 'faqs' %}"><li><i class="fas fa-map-pin"></i>Часто задаваемые вопросы</li></a>
             {% endif %}
             {% if user.is_authenticated %}
