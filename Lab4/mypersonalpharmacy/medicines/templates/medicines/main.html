@@ -9,27 +9,25 @@
         <img src="{% static 'medicines/images/banner.png' %}"/>
     </center>
     <hr/>
-    <h2 align="middle">Последнее добавленное лекарство</h2>
+    <h2 align="middle">Последняя новость</h2>
     <hr/>
-    <div align="middle"><ul>
+    <div align="middle">
       {% for p in posts %}
             {% if forloop.last %}
-            <li><div class="article-panel">
-              <p class="first">Вид препарата: {{p.category}}</p>
-                <p class="last">Стоимость: {{p.price}}</p>
-            </div>
-                <h2>{{p.title}}</h2>
-                {% autoescape on %}
-              {{p.supplier}}
-              {% endautoescape %}
-      <div class="clear"></div>
-      <p class="link-read-post"><a href="{{ p.get_absolute_url }}" class="btn btn-warning">Купить</a></p>
+                <h2>{{ p.name }}</h2>
+            {% if p.image %}
+                <p><img src="{{ p.image.url }}"></p>
+            {% endif %}
+            <p>{{ p.summary }}</p>
+            <details>
+                <summary>Читать далее...</summary>
+                <p>{{p.article}}</p>
+            </details>
             {% endif %}
         {% endfor %}
 
-    </ul></div>
-    <hr/>
-    </ul>
+    </div>
+
     <hr/>
     <h2 align="middle">Наши компании-партнеры</h2>
     <hr/>

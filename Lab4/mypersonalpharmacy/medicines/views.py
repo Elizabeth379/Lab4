@@ -51,19 +51,25 @@ class PrivacyPolicy(TemplateView):
     template_name = 'medicines/privacy_policy.html'
 
 
-class News(TemplateView):
+class Newsv(ListView):
+    model = News
     template_name = 'medicines/news.html'
+    context_object_name = 'posts'
+
+    def get_queryset(self):
+        return News.objects.all()
+
 
 
 class Company(TemplateView):
     template_name = 'medicines/company.html'
 
 class Main(ListView):
-    model = Medication
+    model = News
     template_name = 'medicines/main.html'
     context_object_name = 'posts'
     def get_queryset(self):
-        return Medication.objects.filter(is_available=True).order_by('-id')[:1]
+        return News.objects.all()
 
 class MedList(ListView):
     model = Medication
