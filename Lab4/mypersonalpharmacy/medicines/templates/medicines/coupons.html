@@ -5,11 +5,13 @@
     <h1>Купоны и промокоды</h1>
     <h2>Активные</h2>
     <table border="1">
-        <tr>
-        <th>Название</th>
-        <th>Описание</th>
+        <thead>
+            <tr>
+            <th>Название</th>
+            <th>Описание</th>
         </tr>
-
+        </thead>
+        <tbody>
             {% for p in posts %}
             {% if not p.archived %}
                 <tr>
@@ -18,14 +20,17 @@
                 </tr>
             {% endif %}
             {% endfor %}
-
+        </tbody>
     </table>
     <h2>В архиве</h2>
     <table border="1">
-        <tr>
-        <th>Название</th>
-        <th>Описание</th>
-        </tr>
+        <thead>
+            <tr>
+            <th>Название</th>
+            <th>Описание</th>
+            </tr>
+        </thead>
+        <tbody>
             {% for p in posts %}
             {% if p.archived %}
                 <tr>
@@ -34,6 +39,7 @@
                 </tr>
             {% endif %}
             {% endfor %}
+        </tbody>
     </table>
 
 {% endblock %}

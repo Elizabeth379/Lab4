@@ -4,11 +4,13 @@
 {% block content %}
     <h1>Наши сотрудники всегда готовы Вам помочь!</h1>
     <table border="1">
-        <tr>
-        <th>Фото</th>
-        <th>Контакты</th>
-        </tr>
-
+        <thead>
+            <tr>
+            <th>Фото</th>
+            <th>Контакты</th>
+            </tr>
+        </thead>
+        <tbody>
             {% for p in posts %}
 
                 <tr>
@@ -26,7 +28,7 @@
                 </tr>
 
             {% endfor %}
-
+        </tbody>
     </table>
 
 {% endblock %}

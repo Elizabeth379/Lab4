@@ -4,7 +4,7 @@
 
 {% block content %}
 <div>
-    <h1>Список лекарств</h1>
+    <article id="part1"><h1>Список лекарств</h1></article>
     {% if posts %}
         {% for p in posts %}
             <div><!--class="alert alert-warning" -->
@@ -26,6 +26,7 @@
         <p>Лекарств нет в продаже.</p>
     {% endif %}
 </div>
-
-
+    <center><a href="#part1">К началу списка</a></center>
+    <br>
+    <br>
 {% endblock %}

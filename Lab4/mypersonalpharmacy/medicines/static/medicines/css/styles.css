@@ -101,3 +101,17 @@ main .features p{max-width: 400px; margin: 20px auto}
     background: #16A741;
 }
 
+.trapezoid {
+	border-bottom: 50px solid #000000;
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+	height: 0;
+	width: 125px;
+}
+
+.verse {
+  display: table;
+  margin: 0 auto; /* для центрирования display: table; не нужно указывать ширину блока, она рассчитывается самостоятельно */
+  white-space: pre-line; /* не нужен <br> */
+  word-wrap: break-word; /* чтобы слова переносились на маленьком экране */
+}
