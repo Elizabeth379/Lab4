@@ -1,0 +1,25 @@
+{% extends 'medicines/layout.html' %}
+{% block content %}
+    <h1>{{ title }}</h1>
+    {% if user.is_authenticated %}
+        <a href="/feedback_form" target="_top"><input type="button" value="Отправить отзыв"></a>
+    {% endif %}
+    <hr>
+        {% for f in feedback_list %}
+            <ul class="list-articles">
+                <li>
+                    <div class="article-panel">
+                        <p class="last">Дата оставления отзыва: {{f.time_create}}</p>
+                        <p class="first">{{f.user}}</p>
+                    </div>
+                    <h2>Оценка: {{f.rating}}/5</h2>
+                    Имя и фамилия пользователя:
+                    {{f.name}}
+                    {{f.last_name}}
+                    <p>Отзыв: {{f.feedback}}</p>
+                    <div class="clear"></div>
+                </li>
+            </ul>
+            <hr>
+        {% endfor %}
+{% endblock %}

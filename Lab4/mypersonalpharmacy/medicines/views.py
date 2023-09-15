@@ -4,6 +4,8 @@ from django.views.generic import ListView
 from django.views.generic import TemplateView
 
 from .models import *
+from .forms import *
+
 import random
 import requests
 from django.urls import reverse_lazy
@@ -60,9 +62,9 @@ class Newsv(ListView):
         return News.objects.all()
 
 
-
 class Company(TemplateView):
     template_name = 'medicines/company.html'
+
 
 class Main(ListView):
     model = News
@@ -70,6 +72,7 @@ class Main(ListView):
     context_object_name = 'posts'
     def get_queryset(self):
         return News.objects.all()
+
 
 class MedList(ListView):
     model = Medication
@@ -155,3 +158,22 @@ def thanks(request, thanks_id):
     return render(request, 'medicines/thanks.html', {'posts': posts, 'title': 'Куплено'})
 
 
+class FeedBackForm(CreateView):
+    form_class = FeedBackForm
+    template_name = 'medicines/feedback_form.html'
+    success_url = reverse_lazy('feedback_view')
+    login_url = reverse_lazy('register')
+    raise_exception = True
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+
+        return super().form_valid(form)
+
+
+class FeedBackView(ListView):
+    model = FeedBack
+    template_name = 'medicines/feedback_view.html'
+
+    def get_queryset(self):
+        return FeedBack.objects.all()
