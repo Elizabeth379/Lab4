@@ -163,6 +163,10 @@ class News(models.Model):
     summary = models.TextField(blank=True, verbose_name='Краткое содержание')
     article = models.TextField(blank=True, verbose_name='Вся статья')
     image = models.ImageField(upload_to="static/medicines/images/news", blank=True)
+    url = models.URLField(null=True, verbose_name='Ссылка на статью')
+
+    def get_absolute_url(self):
+        return self.url
 
 
 

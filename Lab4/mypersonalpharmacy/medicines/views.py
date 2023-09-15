@@ -49,6 +49,14 @@ class Vacancies(ListView):
         return Vacancy.objects.all()
 
 
+class SxNews(TemplateView):
+    template_name = 'medicines/sx_news.html'
+
+
+class InNews(TemplateView):
+    template_name = 'medicines/in_news.html'
+
+
 class PrivacyPolicy(TemplateView):
     template_name = 'medicines/privacy_policy.html'
 
