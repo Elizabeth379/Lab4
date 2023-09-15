@@ -10,7 +10,26 @@
     <h1>и получите заряд хорошего настроения на весь день!</h1>
     <img src="{{ image_url }}" alt="Such image doesn't exist :(" style="max-width: 500px;">
     <p1>Спасибо, что выбрали нас.</p1>
+    <hr>
 
 </div>
+      <h1>Листинг</h1>
+    <listing>
+        class FAQ(models.Model):
+        question = models.CharField(max_length=100, verbose_name='Вопрос')
+        answer = models.TextField(blank=True, verbose_name='Ответ')
+        date = models.DateField(auto_now_add=True, verbose_name='Дата добавления на сайт')
+
+        class Meta:
+            verbose_name = 'FAQ'
+            verbose_name_plural = 'FAQs'
+
+        def __str__(self):
+            return self.question
+    </listing>
+
+    <!-- nav>ul>li EMMET - сокращения-->
+
+
 
 {% endblock %}

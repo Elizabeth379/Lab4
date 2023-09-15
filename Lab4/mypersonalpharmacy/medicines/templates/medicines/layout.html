@@ -32,11 +32,13 @@
                 <li><a href="{% url 'login' %}"><li><i class="fas fa-right-from-bracket"></i>Вход</li></a></li>
             {% endif %}
 
+
         </ul>
     </nav>
     <aside>
         <img src="{% static 'medicines/images/logo.svg' %}" alt="Аптека">
         <span class="logo">Pharmacy</span>
+        <p>Наше время: {% now "Y-m-d H:i:s" %}</p>
         <h3>Навигация</h3>
         <ul>
             {% if user.is_authenticated %}
