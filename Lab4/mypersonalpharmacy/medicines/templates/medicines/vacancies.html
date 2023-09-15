@@ -8,11 +8,13 @@
     <ul class="list-articles">
 	    {% for p in posts %}
             <li>
-			    <h2>{{ p.name }}</h2>
-			    {% autoescape on %}
-			    <p>{{p.description|linebreaks}}</p>
-                <p>Зарплата: {{p.salary|linebreaks}} рублей в месяц<p/>
-			    {% endautoescape %}
+                <article>
+                    <h2>{{ p.name }}</h2>
+			        {% autoescape on %}
+			        <p>{{p.description|linebreaks}}</p>
+                    <p>Зарплата: {{p.salary|linebreaks}} рублей в месяц<p/>
+			        {% endautoescape %}
+                </article>
 	    {% endfor %}
 </center>
 </ul>

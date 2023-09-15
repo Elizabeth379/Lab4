@@ -13,35 +13,32 @@
     <link rel="shortcut icon" href="{% static 'medicines/images/icon.png' %}" type="image/x-icon"/>
 </head>
 <body>
-    <!--<nav>
-        <center>
-            <ul class="hr">
-            <a href="{% url 'main' %}"><li><i class="fas fa-house-medical"></i>Главная</li></a>
-            <a href="{% url 'company' %}"><li><i class="fas-sharp fa-solid fa-heart-pulse"></i>О нас ^_^</li></a>
+    <nav>
+        <ul class="hr">
+            <li><a href="{% url 'main' %}"><li><i class="fas fa-house-medical"></i>Главная</li></a></li>
+            <li><a href="{% url 'company' %}"><li><i class="fas-sharp fa-solid fa-heart-pulse"></i>О нас ^_^</li></a></li>
             {% if user.is_authenticated %}
-                <a href="{% url 'news' %}"><li><i class="fas fa-house-medical"></i>Новости</li></a>
+                <li><a href="{% url 'news' %}"><li><i class="fas fa-house-medical"></i>Новости</li></a></li>
             {% endif %}
             {% if user.is_authenticated %}
-                <a href="{% url 'home' %}"><li><i class="fas fa-right-from-bracket"></i>Выход</li></a>
+                <li><a href="{% url 'coupons' %}"><li><i class="fas fa-map-pin"></i>Купоны и промокоды</li></a></li>
+            {% endif %}
+            {% if user.is_superuser %}
+                <li><a href=" http://127.0.0.1:8000/admin" target="_blank"><li><i class="fas fa-house-medical"></i>Админка</li></a></li>
+            {% endif %}
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'home' %}"><li><i class="fas fa-right-from-bracket"></i>Выход</li></a></li>
             {% else %}
-                <a href="{% url 'login' %}"><li><i class="fas fa-right-from-bracket"></i>Вход</li></a>
+                <li><a href="{% url 'login' %}"><li><i class="fas fa-right-from-bracket"></i>Вход</li></a></li>
             {% endif %}
+
         </ul>
-        </center>
-    </nav> -->
+    </nav>
     <aside>
         <img src="{% static 'medicines/images/logo.svg' %}" alt="Аптека">
         <span class="logo">Pharmacy</span>
         <h3>Навигация</h3>
         <ul>
-            <a href="{% url 'main' %}"><li><i class="fas fa-house-medical"></i>Главная</li></a>
-            {% if user.is_superuser %}
-                <a href=" http://127.0.0.1:8000/admin" target="_blank"><li><i class="fas fa-house-medical"></i>Админка</li></a>
-            {% endif %}
-            <a href="{% url 'company' %}"><li><i class="fas-sharp fa-solid fa-heart-pulse"></i>О нас ^_^</li></a>
-            {% if user.is_authenticated %}
-                <a href="{% url 'news' %}"><li><i class="fas fa-house-medical"></i>Новости</li></a>
-            {% endif %}
             {% if user.is_authenticated %}
                 <a href="{% url 'about' %}"><li><i class="fas-sharp fa-solid fa-heart-pulse"></i>Мы любим Вас</li></a>
             {% endif %}
@@ -51,9 +48,6 @@
                 <a href="{% url 'vacancies' %}"><li><i class="fas-sharp fa-solid fa-heart-pulse"></i>Вакансии</li></a>
             {% endif %}
             {% if user.is_authenticated %}
-                <a href="{% url 'coupons' %}"><li><i class="fas fa-map-pin"></i>Купоны и промокоды</li></a>
-            {% endif %}
-            {% if user.is_authenticated %}
                 <a href="{% url 'employees' %}"><li><i class="fas fa-pills"></i>Сотрудники</li></a>
             {% endif %}
             {% if user.is_authenticated %}
@@ -61,17 +55,14 @@
             {% endif %}
 
             <a href="{% url 'feedback_view' %}"><li><i class="fas fa-map-pin"></i>Отзывы</li></a>
-
-            {% if user.is_authenticated %}
-                <a href="{% url 'home' %}"><li><i class="fas fa-right-from-bracket"></i>Выход</li></a>
-            {% else %}
-                <a href="{% url 'login' %}"><li><i class="fas fa-right-from-bracket"></i>Вход</li></a>
-            {% endif %}
         </ul>
     </aside>
     <main>
         {% block content %}
         {% endblock %}
     </main>
+    <footer>
+        <p>© 2023 Elis</p>
+    </footer>
 </body>
 </html>
