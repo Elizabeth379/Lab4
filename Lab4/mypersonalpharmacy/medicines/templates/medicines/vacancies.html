@@ -3,7 +3,6 @@
 {% block title %}Вакансии{% endblock %}
 
 {% block content %}
-<center>
     <h1>Доступные вакансии</h1>
     <ul class="list-articles">
 	    {% for p in posts %}
@@ -16,6 +15,5 @@
 			        {% endautoescape %}
                 </article>
 	    {% endfor %}
-</center>
 </ul>
 {% endblock %}
