@@ -15,21 +15,21 @@
 <body translate = "yes">
     <nav>
         <ul class="hr">
-            <li><a href="{% url 'main' %}"><li><i class="fas fa-house-medical"></i>Главная</li></a></li>
-            <li><a href="{% url 'company' %}"><li><i class="fas-sharp fa-solid fa-heart-pulse"></i>О нас ^_^</li></a></li>
+            <li><a href="{% url 'main' %}"><i class="fas fa-house-medical"></i>Главная</a></li>
+            <li><a href="{% url 'company' %}"><i class="fas-sharp fa-solid fa-heart-pulse"></i>О нас ^_^</a></li>
             {% if user.is_authenticated %}
-                <li><a href="{% url 'news' %}"><li><i class="fas fa-house-medical"></i>Новости</li></a></li>
+                <li><a href="{% url 'news' %}"><i class="fas fa-house-medical"></i>Новости</a></li>
             {% endif %}
             {% if user.is_authenticated %}
-                <li><a href="{% url 'coupons' %}"><li><i class="fas fa-map-pin"></i>Купоны и промокоды</li></a></li>
+                <li><a href="{% url 'coupons' %}"><i class="fas fa-map-pin"></i>Купоны и промокоды</a></li>
             {% endif %}
             {% if user.is_superuser %}
-                <li><a href=" http://127.0.0.1:8000/admin" target="_blank"><li><i class="fas fa-house-medical"></i>Админка</li></a></li>
+                <li><a href=" http://127.0.0.1:8000/admin" target="_blank"><li><i class="fas fa-house-medical"></i>Админка</a></li>
             {% endif %}
             {% if user.is_authenticated %}
-                <li><a href="{% url 'home' %}"><li><i class="fas fa-right-from-bracket"></i>Выход</li></a></li>
+                <li><a href="{% url 'home' %}"><i class="fas fa-right-from-bracket"></i>Выход</a></li>
             {% else %}
-                <li><a href="{% url 'login' %}"><li><i class="fas fa-right-from-bracket"></i>Вход</li></a></li>
+                <li><a href="{% url 'login' %}"><i class="fas fa-right-from-bracket"></i>Вход</a></li>
             {% endif %}
 
 
