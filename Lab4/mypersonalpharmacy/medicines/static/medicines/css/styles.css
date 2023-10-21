@@ -33,6 +33,20 @@ nav li a:hover {
     background-color: #73ff89;
 }
 
+nav li a:visited {
+    color: purple;
+}
+
+nav li a:active {
+    color: red;
+}
+
+nav li a:focus {
+    outline: 2px solid yellow;
+}
+
+
+
 nav.active {
     background-color: #bffdc1;
     color: black;
@@ -115,3 +129,34 @@ main .features p{max-width: 400px; margin: 20px auto}
   white-space: pre-line; /* не нужен <br> */
   word-wrap: break-word; /* чтобы слова переносились на маленьком экране */
 }
+
+/* Стиль для первой строки таблицы */
+table tr:first-child {
+    background-color: #ccc;
+}
+
+/* Стиль для последней строки таблицы */
+table tr:last-child {
+    font-style: italic;
+}
+
+/* Стиль для каждой четной строки таблицы */
+table tr:nth-child(even) {
+    color: blue;
+}
+
+/* Стиль для первого элемента списка */
+.timeline-list li:first-child {
+    font-weight: bold;
+}
+
+/* Стиль для последнего элемента списка */
+.timeline-list li:last-child {
+    color: red;
+}
+
+/* Стиль для каждого второго элемента списка */
+.timeline-list li:nth-child(2n) {
+    background-color: #f0f0f0;
+}
+
