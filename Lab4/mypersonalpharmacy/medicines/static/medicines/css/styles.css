@@ -82,7 +82,7 @@ aside .logo {
     top: -5px;
     font-family: 'Cinzel Decorative', sans-serif;
     letter-spacing: 1px;
-    color: #000000; 
+    color: #000000;
 }
 
 aside h3 {
@@ -368,4 +368,34 @@ table tr:nth-child(even) {
     letter-spacing: 1px;
     color: #000000;
     font-weight: bold;
+}
+
+/* Стили для баннера */
+.banner {
+    position: relative;
+    width: 50vw;
+    height: 50vh;
+    overflow: hidden;
+}
+
+/* Стили для анимированного объекта */
+.animated-object {
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff; /* Цвет объекта */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Центрирование объекта */
+    animation: rotateAnimation 3s infinite linear; /* Настройка анимации */
+}
+
+/* Ключевые кадры для анимации вращения */
+@keyframes rotateAnimation {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
