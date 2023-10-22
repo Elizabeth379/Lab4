@@ -546,3 +546,24 @@ table tr:nth-child(even) {
     color: #16A741; /* Цвет текста года */
     margin-bottom: 5px; /* Отступ между годом и текстом */
 }
+
+/* Стили для реквизитов */
+.requisites {
+    margin-top: 30px;
+}
+
+.requisites h3 {
+    font-family: 'Roboto', sans-serif; /* Шрифт "Roboto" */
+    color: #333; /* Цвет заголовка */
+}
+
+.requisites p {
+    margin: 0;
+}
+
+/* Стили для выделения реквизитов красивым шрифтом */
+.highlight {
+    font-family: 'Roboto', sans-serif; /* Шрифт "Roboto" */
+    font-weight: bold;
+    color: #16A741; /* Цвет выделенного текста */
+}
