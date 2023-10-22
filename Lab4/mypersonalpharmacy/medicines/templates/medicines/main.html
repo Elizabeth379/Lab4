@@ -31,17 +31,23 @@
     <hr/>
     <h2 align="middle">Наши компании-партнеры</h2>
     <hr/>
-    <p align="middle">
-        <a href="https://belarusbank.by/ru/fizicheskim_licam/31886/internet_banking">
-            <img src="{% static 'medicines/images/belarusbank_logo.jpg' %}" width="60" height="50" alt="Пример">
-        </a>
-        <a href="https://www.boiron.ru/">
-            <img src="{% static 'medicines/images/boiron_logo.png' %}" width="60" height="50" alt="Пример">
-        </a>
-        <a href="https://servier.ru/">
-            <img src="{% static 'medicines/images/servier_logo.svg.png' %}" width="60" height="50" alt="Пример">
-        </a>
-    </p>
+    <div class="partners-list">
+        <div class="partner-block">
+            <a href="https://belarusbank.by/ru/fizicheskim_licam/31886/internet_banking" target="_blank">
+            <img src="{% static 'medicines/images/belarusbank_logo.jpg' %}" width="60" height="50" alt="Беларусбанк">
+            </a>
+        </div>
+        <div class="partner-block">
+            <a href="https://www.boiron.ru/" target="_blank">
+            <img src="{% static 'medicines/images/boiron_logo.png' %}" width="60" height="50" alt="Бойрон">
+            </a>
+        </div>
+        <div class="partner-block">
+            <a href="https://servier.ru/" target="_blank">
+            <img src="{% static 'medicines/images/servier_logo.svg.png' %}" width="60" height="50" alt="Сервьер">
+            </a>
+        </div>
+    </div>
     <hr/>
     <center><a href="{% url 'privacy_policy' %}" target="_blank">Политика конфиденциальности</a></center>
 

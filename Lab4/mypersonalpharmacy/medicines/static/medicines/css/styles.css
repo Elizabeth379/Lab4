@@ -328,10 +328,32 @@ table tr:nth-child(even) {
     gap: 20px; /* Расстояние между элементами */
 }
 
-/* Стили для элементов товаров/услуг */
 .product {
     background-color: #f0f0f0;
     padding: 20px;
     border: 1px solid #ccc;
     text-align: center;
+}
+
+/* Стили для списка компаний партнеров */
+.partners-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 30vh; /* Высота может быть настроена в зависимости от ваших предпочтений */
+}
+
+.partner-block {
+    width: 100px; /* Настройте ширину блока */
+    height: 100px; /* Настройте высоту блока */
+    background-color: #16A741; /* Настройте цвет фона */
+    border-radius: 50%; /* Делает блок круглым */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Настройте тень */
+    text-align: center;
+    line-height: 100px; /* Выравнивание текста по центру */
+    color: #ffffff; /* Цвет текста */
+}
+
+.partner-block img {
+    vertical-align: middle; /* Центрирование по вертикали */
 }
