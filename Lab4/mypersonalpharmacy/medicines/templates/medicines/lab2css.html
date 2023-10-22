@@ -1,8 +1,36 @@
 {% extends 'medicines/layout.html' %}
 {% load static %}
-{% block title %}О нашей компании{% endblock %}
+{% block title %}Лабораторная №2{% endblock %}
 
 {% block content %}
+    <form class="stylized-form">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" required>
 
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" disabled>
 
+        <label for="age">Возраст:</label>
+        <input type="number" id="age" name="age" min="18" max="99">
+
+        <label for="comments">Комментарии:</label>
+        <textarea id="comments" name="comments" rows="4" cols="50" disabled></textarea>
+
+        <label>Пол:</label>
+        <input type="radio" id="male" name="gender" value="male" checked>
+        <label for="male">Мужской</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Женский</label>
+
+        <label class="checkbox style-d">
+            <input type="checkbox" id="subscribe" name="subscribe" checked/>
+            <div class="checkbox__checkmark"></div>
+            <div class="checkbox__body">Подписаться</div>
+        </label>
+
+        <input type="submit" value="Отправить">
+
+        
+
+    </form>
 {% endblock %}
