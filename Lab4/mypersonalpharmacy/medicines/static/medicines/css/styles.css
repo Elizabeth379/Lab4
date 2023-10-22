@@ -1,11 +1,17 @@
 body {
-    background: #ffffff;
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: -1;
 }
+
 
 nav{
     background: #16A741;
     height: 5vh;
     color: #000000;
+    z-index: 1;
 }
 
 nav ul{
@@ -60,6 +66,7 @@ aside{
     height: 100vh;
     color: #000000;
     border-right: 5px solid #ffffff;
+    z-index: 1;
 }
 
 aside img {
@@ -128,6 +135,10 @@ main .features p{max-width: 400px; margin: 20px auto}
   margin: 0 auto; /* для центрирования display: table; не нужно указывать ширину блока, она рассчитывается самостоятельно */
   white-space: pre-line; /* не нужен <br> */
   word-wrap: break-word; /* чтобы слова переносились на маленьком экране */
+}
+
+.custom-button:hover {
+    cursor: pointer;
 }
 
 /* Стиль для первой строки таблицы */
@@ -298,3 +309,15 @@ table tr:nth-child(even) {
 .form_radio input[type=radio]:disabled + label:before {
 	filter: grayscale(100%);
 }
+
+/* Кавычки для цитат */
+.quote-ru::before,
+.quote-ru::after {
+    content: '"';
+}
+
+.quote-en::before,
+.quote-en::after {
+    content: "'";
+}
+
