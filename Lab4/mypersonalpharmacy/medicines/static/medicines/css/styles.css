@@ -340,20 +340,20 @@ table tr:nth-child(even) {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 30vh; /* Высота может быть настроена в зависимости от ваших предпочтений */
+    height: 30vh;
 }
 
 .partner-block {
-    width: 100px; /* Настройте ширину блока */
-    height: 100px; /* Настройте высоту блока */
-    background-color: #16A741; /* Настройте цвет фона */
-    border-radius: 50%; /* Делает блок круглым */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Настройте тень */
+    width: 100px; /
+    height: 100px;
+    background-color: #16A741;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* Настройка тени */
     text-align: center;
-    line-height: 100px; /* Выравнивание текста по центру */
-    color: #ffffff; /* Цвет текста */
+    line-height: 100px;
+    color: #ffffff;
 }
 
 .partner-block img {
-    vertical-align: middle; /* Центрирование по вертикали */
+    vertical-align: middle;
 }
