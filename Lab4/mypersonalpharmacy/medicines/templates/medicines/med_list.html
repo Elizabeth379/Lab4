@@ -3,11 +3,11 @@
 {% block title %}Список лекарств{% endblock %}
 
 {% block content %}
-<div>
     <article id="part1"><h1>Список лекарств</h1></article>
+<div class="catalog-container">
     {% if posts %}
         {% for p in posts %}
-            <div><!--class="alert alert-warning" -->
+            <div class="product">
                 <h3>{{p.title}}</h3>
                 <p>{{p.content|linebreaks}}</p>
                 <p>Категория: {{p.category}}</p>

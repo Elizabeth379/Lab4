@@ -321,3 +321,17 @@ table tr:nth-child(even) {
     content: "'";
 }
 
+/* Стиль для списка лекарств */
+.catalog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Автоматически добавлять столбцы, минимальная ширина 200px */
+    gap: 20px; /* Расстояние между элементами */
+}
+
+/* Стили для элементов товаров/услуг */
+.product {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
