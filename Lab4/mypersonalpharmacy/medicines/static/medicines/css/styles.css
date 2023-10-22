@@ -413,3 +413,13 @@ table tr:nth-child(even) {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
     /* Другие стили для информации о последней статье */
 }
+
+/* Стили для логотипа */
+.logo img {
+    transform: rotate(30deg);
+    transition: transform 0.3s ease-in-out; /* Плавный переход при изменении трансформации */
+}
+
+.logo:hover img {
+    transform: rotate(0deg);
+}
