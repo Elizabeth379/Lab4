@@ -567,3 +567,49 @@ table tr:nth-child(even) {
     font-weight: bold;
     color: #16A741; /* Цвет выделенного текста */
 }
+
+/* Стили для контейнера видео */
+.video-container {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 40%; /* Оптимальное соотношение сторон видео 16:9 */
+    margin: 0 auto; /* Центрирование видео по горизонтали */
+    border: 6px solid #16A741; /* Добавляем рамку */
+}
+
+/* Стили для видео-оверлея */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Стили для видео */
+.video-overlay iframe {
+    width: 100%;
+    height: 100%;
+    border: 0; /* Убираем рамку вокруг видео */
+}
+
+/* Стили для эффекта при наведении на видео - треугольник (воспроизведение) */
+.video-container:hover::before {
+    content: '\25BA'; /* Символ треугольника (воспроизведение) */
+    font-size: 60px;
+    color: #ffffff; /* Новый цвет символа при наведении */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 2;
+}
+
+
+
+
+
