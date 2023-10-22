@@ -182,6 +182,16 @@ table tr:nth-child(even) {
     margin: 5px;
 }
 
+/* Стили для обязательных полей */
+.stylized-form input:required, .stylized-form textarea:required, .stylized-form select:required {
+    border: 1px solid #f7cb15;
+}
+
+/* Стили для необязательных полей */
+.stylized-form input:not(:required), .stylized-form textarea:not(:required), .stylized-form select:not(:required) {
+    border: 1px solid #ccc;
+}
+
 /* Стили для флажка */
 
 .checkbox.style-d {
@@ -246,3 +256,45 @@ table tr:nth-child(even) {
   transition: color 0.25s ease;
 }
 
+/* Стили для радио кнопок */
+
+.form_radio {
+	margin-bottom: 10px;
+}
+.form_radio input[type=radio] {
+	display: none;
+}
+.form_radio label {
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	padding-left: 25px;
+	margin-right: 0;
+	line-height: 18px;
+	user-select: none;
+}
+.form_radio label:before {
+	content: "";
+	display: inline-block;
+	width: 17px;
+	height: 18px;
+	position: absolute;
+	left: 0;
+	bottom: 1px;
+	background: #16A741 0 0 no-repeat;
+}
+
+/* Checked */
+.form_radio input[type=radio]:checked + label:before {
+	background: #4ac1f7 0 0 no-repeat;
+}
+
+/* Hover */
+.form_radio label:hover:before {
+	filter: brightness(120%);
+}
+
+/* Disabled */
+.form_radio input[type=radio]:disabled + label:before {
+	filter: grayscale(100%);
+}
