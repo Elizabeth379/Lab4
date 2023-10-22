@@ -8,10 +8,9 @@
     <center>
         <img src="{% static 'medicines/images/banner.png' %} " title = "Баннер компании" />
     </center>
-    <hr/>
-    <h2 align="middle">Последняя новость</h2>
-    <hr/>
-    <div align="middle">
+
+    <div class="last-article-info">
+        <h2>Последняя новость</h2>
       {% for p in posts %}
             {% if forloop.last %}
                 <h2>{{ p.name }}</h2>

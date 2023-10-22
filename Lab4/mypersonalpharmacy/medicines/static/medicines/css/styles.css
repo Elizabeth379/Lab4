@@ -12,6 +12,9 @@ nav{
     height: 5vh;
     color: #000000;
     z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 nav ul{
@@ -398,4 +401,15 @@ table tr:nth-child(even) {
     100% {
         transform: translate(-50%, -50%) rotate(360deg);
     }
+}
+
+/* Стили для информации о последней статье */
+.last-article-info {
+    position: absolute;
+    top: 1400px; /* Расстояние от верхнего края */
+    right: 20px; /* Расстояние от правого края */
+    background-color: #16A741;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    /* Другие стили для информации о последней статье */
 }
