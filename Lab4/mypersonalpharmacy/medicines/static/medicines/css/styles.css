@@ -423,3 +423,106 @@ table tr:nth-child(even) {
 .logo:hover img {
     transform: rotate(0deg);
 }
+
+/* Стили для сертификата */
+.wrapper {
+    position: relative;
+    border: 2px solid #16A741;
+    padding: 20px;
+    background-image: url('../images/sback.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+    z-index: 999; /* Уровень наложения для фиксированного элемента */
+}
+
+/* Стили для заголовка */
+.wrapper h1 {
+    background: linear-gradient(to bottom, #16A741, #0e732c);
+    font-size: 32px;
+}
+
+/* Стили для разделителя */
+.wrapper hr {
+    border-color: #16A741;
+}
+
+/* Стили для фигуры */
+.figure {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+/* Стили для заголовка фигуры */
+.figure h4 {
+    font-size: 24px;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Стили для большого заголовка */
+.figure h1 {
+    font-size: 48px;
+    color: #333;
+    text-align: center;
+    margin-top: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Стили для малого заголовка */
+.figure h4 {
+    font-size: 18px;
+    color: #888;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Стили для текста слева и справа */
+.text-left,
+.text-right {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Стили для выравнивания текста */
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Стили для второго уровня заголовков */
+.figure h2 {
+    font-size: 28px;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+}
+
+/* Стили для подчеркивания */
+.figure u {
+    text-decoration: underline;
+}
+
+/* Стили для ссылки на скачивание сертификата */
+.download-link {
+    display: inline-block;
+    font-size: 20px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #16A741;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.download-link:hover {
+    background-color: #16A741;
+}

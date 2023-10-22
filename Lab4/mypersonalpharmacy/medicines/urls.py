@@ -25,5 +25,6 @@ urlpatterns = [
     path('feedback_form/', views.FeedBackForm.as_view(), name='feedback_form'),
     path('news/sx_news/', views.SxNews.as_view(), name='sx_news'),
     path('news/in_news/', views.InNews.as_view(), name='in_news'),
-    path('lab2css/', views.Lab2css.as_view(), name='lab2css')
+    path('lab2css/', views.Lab2css.as_view(), name='lab2css'),
+    path('certificate/', views.Certificate.as_view(), name='certificate')
 ]
