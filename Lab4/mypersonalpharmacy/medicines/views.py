@@ -13,6 +13,10 @@ from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import CreateView
 
 
+class Lab2css(TemplateView):
+    template_name = 'medicines/lab2css.html'
+
+
 class Employees(ListView):
     model = Employee
     template_name = 'medicines/employees.html'
