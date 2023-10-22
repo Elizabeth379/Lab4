@@ -609,6 +609,29 @@ table tr:nth-child(even) {
     z-index: 2;
 }
 
+/* Стили для контейнера аудио */
+.audio-container {
+    text-align: center;
+    margin: 20px;
+}
+
+/* Стили для элемента аудио */
+.custom-audio {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #f2f2f2; /* Цвет фона */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
+/* Стили для элементов управления аудио при наведении */
+.custom-audio:hover {
+    background-color: #73ff89; /* Цвет фона при наведении */
+}
+
+
 
 
 
