@@ -80,6 +80,9 @@ aside .logo {
     font-weight: bold;
     position: relative;
     top: -5px;
+    font-family: 'Cinzel Decorative', sans-serif;
+    letter-spacing: 1px;
+    color: #000000; 
 }
 
 aside h3 {
@@ -356,4 +359,13 @@ table tr:nth-child(even) {
 
 .partner-block img {
     vertical-align: middle;
+}
+
+/* Имя компании где-то внутри текста */
+
+.company-name {
+    font-family: 'Cinzel Decorative', sans-serif;
+    letter-spacing: 1px;
+    color: #000000;
+    font-weight: bold;
 }
