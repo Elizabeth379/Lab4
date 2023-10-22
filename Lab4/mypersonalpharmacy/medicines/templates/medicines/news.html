@@ -15,19 +15,25 @@
         Аптека, улица, фонарь.
     <cite>Александр Блок</cite>
     </div>
-    {% for p in posts %}
-        <hr/>
-        <h2>{{ p.name }}</h2>
+    <br>
+    <div class="article-list">
+        {% for p in posts %}
+            <div class="article">
+                <h2>{{ p.name }}</h2>
             {% if p.image %}
-                <p><img src="{{ p.image.url }}"></p>
+                <p><img src="{{ p.image.url }}" alt="{{ p.name }}"></p>
             {% endif %}
-        <p>{{ p.summary }}</p>
+        <p class="short-description">{{ p.summary }}</p>
         <details>
             <summary>Читать далее...</summary>
             <p>{{p.article}}</p>
-            <a href="{{ p.get_absolute_url }}" target="_blank">Читать всё</a>
+            <button class="read-more-btn"><a href="{{ p.get_absolute_url }}" target="_blank">Читать всё</a></button>
         </details>
-    {% endfor %}
+            <hr/>
+            </div>
+        {% endfor %}
+    </div>
+
     <br>
     <br>
 {% endblock %}

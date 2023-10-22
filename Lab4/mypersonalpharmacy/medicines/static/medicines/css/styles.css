@@ -633,6 +633,52 @@ table tr:nth-child(even) {
     background-color: #73ff89; /* Цвет фона при наведении */
 }
 
+/* Стили для списка статей */
+.article-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Стили для каждой статьи */
+.article {
+    width: calc(33.33% - 20px); /* 33.33% для многоколоночного макета с зазором 20px между статьями */
+    overflow: hidden;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Стили для изображения в статье */
+.article img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Стили для кнопки "Читать далее" */
+.read-more-btn {
+    display: block;
+    background-color: #16A741;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.read-more-btn:hover {
+    background-color: #73ff89;
+}
+
+/* Стили для краткой информации о статье с использованием многоточия */
+.short-description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Ограничение на 3 строки */
+    -webkit-box-orient: vertical;
+}
 
 
 
