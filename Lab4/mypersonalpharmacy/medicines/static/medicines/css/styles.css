@@ -1,10 +1,25 @@
+@font-face {
+    font-family: 'MainFont';
+    src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+    /* Замените URL на тот, который предоставляет ваша служба шрифтов */
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'AlternativeFont';
+    src: local('Arial');
+    font-style: normal;
+    font-weight: 400;
+}
+
 body {
     background-image: url("../images/background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     z-index: -1;
-    font-family: 'Arial', sans-serif;
+     font-family: 'MainFont', Arial, sans-serif;
     line-height: 1.6;
     color: #333;
     margin: 0;
@@ -15,6 +30,7 @@ body {
 h1, h2, h3 {
     color: #000000;
     text-transform: uppercase; /* Преобразование текста в заглавные буквы */
+        font-family: 'AlternativeFont', sans-serif; /* Альтернативный шрифт для заголовков */
 }
 
 p {
@@ -933,3 +949,42 @@ th, td {
 th:first-child, td:first-child {
     text-align: left; /* Выравнивание по левому краю для первой колонки */
 }
+
+/* Дополнительные псевдоэлементы */
+::selection {
+    background-color: #73ff89; /* Цвет фона при выделении */
+    color: #ffffff; /* Цвет текста при выделении */
+}
+
+.news-style p::first-letter {
+    font-size: 1.5em; /* Размер первой буквы */
+    font-weight: bold; /* Жирное начертание первой буквы */
+    color: #000000; /* Цвет первой буквы */
+}
+
+.context-exp p::before {
+    content: "Контекст в начале: ";
+    font-style: italic;
+}
+
+.context-exp p::after {
+    content: " Контекст в конце.";
+    font-style: italic;
+}
+
+/* Оформление маркеров-символов юникода для списка */
+.list-with-unicode-marker {
+    list-style: none; /* Убираем стандартные маркеры */
+    padding-left: 20px; /* Добавляем небольшой отступ слева */
+
+}
+
+/* Определение маркеров символами Юникода */
+.list-with-unicode-marker li::before {
+    content: "\2022"; /* Символ "•" в Юникоде */
+    color: #16A741; /* Цвет маркера */
+    font-size: 1.5em; /* Размер маркера */
+    margin-right: 5px; /* Расстояние между маркером и текстом */
+}
+
+

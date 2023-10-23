@@ -26,7 +26,7 @@
         <p class="short-description">{{ p.summary }}</p>
         <details>
             <summary>Читать далее...</summary>
-            <p>{{p.article}}</p>
+            <div  class="news-style"><p>{{p.article}}</p></div>
             <button class="read-more-btn"><a href="{{ p.get_absolute_url }}" target="_blank">Читать всё</a></button>
         </details>
             <hr/>
