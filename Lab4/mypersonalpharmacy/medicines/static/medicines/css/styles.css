@@ -144,21 +144,6 @@ main .features p{max-width: 400px; margin: 20px auto}
 }
 
 
-/* Стиль для первой строки таблицы */
-table tr:first-child {
-    background-color: #ccc;
-}
-
-/* Стиль для последней строки таблицы */
-table tr:last-child {
-    font-style: italic;
-}
-
-/* Стиль для каждой четной строки таблицы */
-table tr:nth-child(even) {
-    color: blue;
-}
-
 /* Стиль для первого элемента списка */
 .timeline-list li:first-child {
     font-weight: bold;
@@ -815,4 +800,33 @@ textarea {
 .custom-button:hover {
     background-color: #73ff89;
     cursor: pointer;
+}
+
+/* Купоны и промокоды */
+.coupons-container {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin: 20px auto;
+}
+
+.active-coupons, .archived-coupons {
+    width: 48%; /* Уменьшим немного, чтобы было место между колонками */
+}
+
+.coupons-list {
+    list-style: none;
+    padding: 0;
+}
+
+.coupon-item {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.coupon-item.archived {
+    background-color: #9cbfcc;
+    opacity: 0.5;
 }

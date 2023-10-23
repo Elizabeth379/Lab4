@@ -3,43 +3,35 @@
 
 {% block content %}
     <h1 align="center">Купоны и промокоды</h1>
-    <h2>Активные</h2>
-    <table border="1">
-        <thead>
-            <tr>
-            <th>Название</th>
-            <th>Описание</th>
-        </tr>
-        </thead>
-        <tbody>
-            {% for p in posts %}
-            {% if not p.archived %}
-                <tr>
-                    <td><h3>{{ p.title }}</h3></td>
-                    <td><p>{{p.description}}</p></td>
-                </tr>
-            {% endif %}
-            {% endfor %}
-        </tbody>
-    </table>
-    <h2>В архиве</h2>
-    <table border="1">
-        <thead>
-            <tr>
-            <th>Название</th>
-            <th>Описание</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for p in posts %}
-            {% if p.archived %}
-                <tr>
-                    <td><h3>{{ p.title }}</h3></td>
-                    <td><p>{{p.description}}</p></td>
-                </tr>
-            {% endif %}
-            {% endfor %}
-        </tbody>
-    </table>
+
+    <div class="coupons-container">
+        <div class="active-coupons">
+            <h2>Активные</h2>
+            <ul class="coupons-list">
+                {% for p in posts %}
+                {% if not p.archived %}
+                    <li class="coupon-item">
+                        <h3>{{ p.title }}</h3>
+                        <p>{{ p.description }}</p>
+                    </li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="archived-coupons">
+            <h2>В архиве</h2>
+            <ul class="coupons-list">
+                {% for p in posts %}
+                {% if p.archived %}
+                    <li class="coupon-item archived">
+                        <h3>{{ p.title }}</h3>
+                        <p>{{ p.description }}</p>
+                    </li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
 
 {% endblock %}
