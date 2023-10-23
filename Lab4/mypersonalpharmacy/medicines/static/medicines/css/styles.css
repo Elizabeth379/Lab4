@@ -830,3 +830,46 @@ textarea {
     background-color: #9cbfcc;
     opacity: 0.5;
 }
+
+.table-container {
+    width: 80%;
+    margin: 20px auto;
+}
+
+table {
+    border-collapse: collapse; /* Убираем двойные линии между ячейками */
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center; /* Горизонтальное выравнивание по центру */
+}
+
+th {
+    background-color: #16A741; /* Фон заголовка таблицы */
+    color: #fff; /* Цвет текста в заголовке таблицы */
+}
+
+td:empty {
+    background-color: #4ac1f7; /* Фон в пустых ячейках */
+    opacity: 0.4;
+}
+
+tr:nth-child(even) {
+    background-color: #73ff89; /* Стилизация четных строк */
+}
+
+tr:hover {
+    background-color: #ffffff; /* Стилизация строки при наведении */
+}
+
+th, td {
+    vertical-align: middle; /* Вертикальное выравнивание по центру */
+}
+
+th:first-child, td:first-child {
+    text-align: left; /* Выравнивание по левому краю для первой колонки */
+}
