@@ -712,5 +712,32 @@ abbr {
     font-style: italic;
 }
 
+/* Стили для страницы с сотрудниками */
+.employees-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.employee-card {
+    width: 300px; /* Ширина карточки сотрудника */
+    margin: 15px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+.employee-card img {
+    width: 100%; /* Занимает всю ширину родительского блока */
+    height: auto;
+    border-radius: 50%; /* Делает изображение круглым */
+    margin-bottom: 10px;
+}
+
+.employee-info {
+    display: flex;
+    flex-direction: column;
+}
+
 
 

@@ -3,32 +3,21 @@
 
 {% block content %}
     <h1 align="center">Наши сотрудники всегда готовы Вам помочь!</h1>
-    <table border="1">
-        <thead>
-            <tr>
-            <th>Фото</th>
-            <th>Контакты</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for p in posts %}
 
-                <tr>
-                    <td>
-                        {% if p.photo %}
-                            <p><img src="{{ p.photo.url }}"></p>
-                        {% endif %}
-                    </td>
-                    <td>
-                        <p>{{p.name}}</p>
-                        <p>{{p.description}}</p>
-                        <p>{{p.phone_number}}</p>
-                        <p>{{p.email}}</p>
-                    </td>
-                </tr>
-
-            {% endfor %}
-        </tbody>
-    </table>
+    <div class="employees-container">
+        {% for p in posts %}
+            <div class="employee-card">
+                {% if p.photo %}
+                    <img src="{{ p.photo.url }}" alt="{{ p.name }}">
+                {% endif %}
+                <div class="employee-info">
+                    <p>{{ p.name }}</p>
+                    <p>{{ p.description }}</p>
+                    <p>{{ p.phone_number }}</p>
+                    <p>{{ p.email }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 
 {% endblock %}
