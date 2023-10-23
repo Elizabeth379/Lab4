@@ -4,6 +4,7 @@
 
 {% block content %}
     <h1 align="center"> Вторая лабораторная работа</h1>
+    <div class="empty-space"></div>
     <form class="stylized-form">
         <label for="name">Имя:</label>
         <input type="text" id="name" name="name" required>
@@ -92,5 +93,23 @@
                 </tr>
             </tbody>
         </table>
+    </div>
+
+     <div class="positioned-block">
+        <h1 class="center">Styled Text</h1>
+        <p>This is a sample paragraph with various styles applied. It demonstrates text formatting, spacing, and positioning.</p>
+        <p class="capitalize">This paragraph uses small-caps font variant.</p>
+        <p class="custom-font">This paragraph uses a custom font family.</p>
+        <div class="float-left">
+            <h2>Left Floating Block</h2>
+            <p>This block is floated to the left.</p>
+        </div>
+        <div class="float-right">
+            <h2>Right Floating Block</h2>
+            <p>This block is floated to the right.</p>
+        </div>
+        <div class="clearfix"></div>
+        <p class="center">This paragraph is centered.</p>
+        <p class="red-line">This paragraph has a red line indent.</p>
     </div>
 {% endblock %}

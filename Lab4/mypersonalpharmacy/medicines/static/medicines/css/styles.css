@@ -4,8 +4,67 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     z-index: -1;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    word-wrap: break-word;
 }
 
+h1, h2, h3 {
+    color: #000000;
+    text-transform: uppercase; /* Преобразование текста в заглавные буквы */
+}
+
+p {
+    margin: 10px 0; /* Отступы для параграфов */
+    padding: 10px; /* Поля для параграфов */
+    text-indent: 20px; /* Красная строка */
+    line-height: 1.8; /* Межстрочный интервал */
+    letter-spacing: 1px; /* Интервал между символами */
+    word-spacing: 5px; /* Интервал между словами */
+}
+
+.capitalize {
+    font-variant: small-caps; /* Капитель для фрагмента с классом "capitalize" */
+}
+
+.center {
+    text-align: center; /* Выравнивание текста по центру */
+}
+
+.float-left {
+    float: left; /* Плавающий блок слева */
+}
+
+.float-right {
+    float: right; /* Плавающий блок справа */
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both; /* Очистка float */
+}
+
+/* Шрифты */
+.custom-font {
+    font-family: 'Courier New', monospace; /* Пользовательский шрифт */
+}
+
+/* Позиционирование блоков */
+.positioned-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Центрирование по центру экрана */
+}
+
+.empty-space {
+            width: 200px;
+            height: 1000px;
+        }
 
 nav{
     background: #16A741;
@@ -78,7 +137,7 @@ aside img {
 }
 
 aside .logo {
-    font-size: 40px;
+    font-size: 30px;
     margin-left: 10px;
     font-weight: bold;
     position: relative;
@@ -317,10 +376,10 @@ main .features p{max-width: 400px; margin: 20px auto}
 }
 
 .product {
-    background-color: #f0f0f0;
     padding: 20px;
     border: 1px solid #ccc;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 /* Стили для списка компаний партнеров */
@@ -831,6 +890,7 @@ textarea {
     opacity: 0.5;
 }
 
+/* Таблица */
 .table-container {
     width: 80%;
     margin: 20px auto;

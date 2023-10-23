@@ -4,12 +4,12 @@
 
 {% block content %}
 <div>
-    <h1>Спасибо за покупку!</h1>
+    <h1 align="center">Спасибо за покупку!</h1>
 
     <h1>Наши продажи:</h1>
     {% if posts %}
         {% for p in posts %}
-            <div class="alert alert-warning">
+            <div class="product">
                 <h3>{{p.medication}}</h3>
                 <p>Продавец: {{p.employee}}</p>
                 <p>Куплено: {{p.quantity}}</p>
