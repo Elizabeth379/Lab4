@@ -143,9 +143,6 @@ main .features p{max-width: 400px; margin: 20px auto}
   word-wrap: break-word; /* чтобы слова переносились на маленьком экране */
 }
 
-.custom-button:hover {
-    cursor: pointer;
-}
 
 /* Стиль для первой строки таблицы */
 table tr:first-child {
@@ -760,3 +757,62 @@ abbr {
     clear: both;
 }
 
+#footer {
+	box-sizing: border-box;
+
+	background: #b2c2d0;
+	padding: 5px;
+	color: #000000;
+	font-size: 14px;
+	font-family: Arial;
+	text-align: left;
+	overflow: hidden;
+}
+
+form {
+    margin: 20px;
+    max-width: 400px; /* Максимальная ширина формы */
+    margin-left: auto; /* Форма крепится к правой стороне */
+    margin-right: 500px;
+    text-align: left; /* Выравнивание текста в форме */
+}
+.form-label {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333; /* Цвет текста метки */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Стили для ошибок формы */
+.form-error {
+    color: #ff0000;
+    font-size: 14px;
+}
+
+/* Стили для кнопки отправки формы */
+.custom-button {
+    background-color: #16A741;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Изменение цвета кнопки при наведении */
+.custom-button:hover {
+    background-color: #73ff89;
+    cursor: pointer;
+}
