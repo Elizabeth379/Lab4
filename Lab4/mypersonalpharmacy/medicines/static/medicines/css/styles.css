@@ -739,5 +739,24 @@ abbr {
     flex-direction: column;
 }
 
+/* Стили для страницы с вакансиями */
+.vacancies-list {
+    margin: 20px;
+    overflow: hidden; /* Чтобы контейнер фиксировал высоту своих дочерних элементов */
+}
 
+.vacancy-item {
+    float: left;
+    width: 45%; /* Ширина блока с вакансией */
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+/* Очистка после плавающих элементов */
+.vacancies-list::after {
+    content: "";
+    display: table;
+    clear: both;
+}
 

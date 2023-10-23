@@ -6,16 +6,15 @@
     <h1 align="center">Доступные вакансии</h1>
     <q class="quote-ru">Смерть стоит того, чтобы жить, А любовь стоит того, чтобы ждать.</q>
     <cite>В.Цой</cite>
-    <ul class="list-articles">
-	    {% for p in posts %}
-            <li>
-                <article>
-                    <h2>{{ p.name }}</h2>
-			        {% autoescape on %}
-			        <p>{{p.description|linebreaks}}</p>
-                    <p>Зарплата: {{p.salary|linebreaks}} рублей в месяц<p/>
-			        {% endautoescape %}
-                </article>
-	    {% endfor %}
-</ul>
+    <div class="vacancies-list">
+        {% for p in posts %}
+            <div class="vacancy-item">
+                <h2>{{ p.name }}</h2>
+                {% autoescape on %}
+                <p>{{p.description|linebreaks}}</p>
+                <p>Зарплата: {{p.salary|linebreaks}} рублей в месяц</p>
+                {% endautoescape %}
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
