@@ -15,10 +15,10 @@
     <h1>Часто задаваемые вопросы</h1>
     {% for p in posts %}
         <hr/>
-        <details>
+        <details class="faq-item">
             <summary><h2>{{ p.question }}</h2></summary>
             <p>{{p.answer}}</p>
-            <p>{{p.date}}</p>
+            <p class="date">{{p.date}}</p>
         </details>
     {% endfor %}
 

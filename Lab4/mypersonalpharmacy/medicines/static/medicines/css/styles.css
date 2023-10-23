@@ -680,7 +680,37 @@ table tr:nth-child(even) {
     -webkit-box-orient: vertical;
 }
 
+/* Стили для определений */
+dl {
+    margin-bottom: 20px;
+}
 
+dt {
+    font-weight: bold;
+}
+
+/* Стили для аббревиатур */
+abbr {
+    border-bottom: 1px dashed #555;
+    cursor: help;
+}
+
+/* Стили для часто задаваемых вопросов */
+.faq-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+}
+.faq-item summary {
+    cursor: pointer;
+    list-style: none; /* Убираем стандартный маркер */
+}
+
+/* Стили для даты в часто задаваемых вопросах */
+.date {
+    color: #888;
+    font-style: italic;
+}
 
 
 
