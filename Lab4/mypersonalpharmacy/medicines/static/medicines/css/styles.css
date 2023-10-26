@@ -486,15 +486,16 @@ main .features p{max-width: 400px; margin: 20px auto}
 /* Стили для сертификата */
 .wrapper {
     position: relative;
-    border: 2px solid #16A741;
-    padding: 20px;
-    background-image: url('../images/sback.jpg');
-    background-size: cover;
-    background-position: center;
     font-family: Arial, sans-serif;
     text-align: center;
     margin-bottom: 20px;
     z-index: 999; /* Уровень наложения для фиксированного элемента */
+}
+
+.border-block{
+    border: 15px solid #16A741;
+    padding: 20px;
+    border-image: url('../images/sback.jpg') 10% round;
 }
 
 /* Стили для заголовка */
@@ -989,7 +990,7 @@ th:first-child, td:first-child {
 
 /* Стили для уменьшенных экранов */
 @media screen and (max-width: 767px) {
-    
+
     /* Масштабирование всех объектов */
     * {
         transform: scale(0.8); /* Измените значение масштаба по вашему усмотрению */
