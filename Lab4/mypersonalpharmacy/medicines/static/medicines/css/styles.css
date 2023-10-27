@@ -61,7 +61,7 @@ p {
 .clearfix::after {
     content: "";
     display: table;
-    clear: both; /* Очистка float */
+    clear: both; /* Какие стороны не могут соседствовать с др float */
 }
 
 /* Шрифты */
@@ -632,7 +632,7 @@ main .features p{max-width: 400px; margin: 20px auto}
 .video-container {
     position: relative;
     overflow: hidden;
-    padding-bottom: 40%; /* Оптимальное соотношение сторон видео 16:9 */
+    padding-bottom: 40%;
     margin: 0 auto; /* Центрирование видео по горизонтали */
     border: 6px solid #16A741; /* Добавляем рамку */
 }
