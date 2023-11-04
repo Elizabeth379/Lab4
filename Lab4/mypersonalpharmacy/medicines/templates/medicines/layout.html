@@ -42,7 +42,7 @@
         <script src="{% static 'medicines/js/8countdown.js' %}" defer></script>
         <p id="countdown"></p>
         <script src="{% static 'medicines/js/for8clear_local_storage.js' %}" defer></script>
-        <button onclick="clearLocalStorage()">Очистить локальное хранилище</button>
+        <button onclick="clearLocalStorage()" class="custom-button">Очистить локальное хранилище</button>
         <h3>Навигация</h3>
         <ul>
             {% if user.is_authenticated %}
