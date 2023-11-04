@@ -39,6 +39,10 @@
         <img src="{% static 'medicines/images/logo.svg' %}" alt="Аптека">
         <span class="logo">Pharmacy</span>
         <p>Наше время: {% now "Y-m-d H:i:s" %}</p>
+        <script src="{% static 'medicines/js/8countdown.js' %}" defer></script>
+        <p id="countdown"></p>
+        <script src="{% static 'medicines/js/for8clear_local_storage.js' %}" defer></script>
+        <button onclick="clearLocalStorage()">Очистить локальное хранилище</button>
         <h3>Навигация</h3>
         <ul>
             {% if user.is_authenticated %}
