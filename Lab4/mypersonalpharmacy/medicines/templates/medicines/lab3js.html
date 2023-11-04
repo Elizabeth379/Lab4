@@ -33,4 +33,26 @@
     </script>
 
     <script src="{% static 'medicines/js/2banners.js' %}" defer></script>
+
+    <form id="styleForm">
+    <label>
+        <input type="checkbox" id="fontSizeCheckbox"> Изменить размер шрифта
+    </label>
+    <input type="number" id="fontSizeInput" placeholder="Размер шрифта" disabled>
+    <br>
+    <label>
+        <input type="checkbox" id="textColorCheckbox"> Изменить цвет текста
+    </label>
+    <input type="color" id="textColorInput" disabled>
+    <br>
+    <label>
+        <input type="checkbox" id="backgroundColorCheckbox"> Изменить цвет aside
+    </label>
+    <input type="color" id="backgroundColorInput" disabled>
+    <br>
+    <button type="button" onclick="applyStyles()">Применить</button>
+</form>
+
+    <script src="{% static 'medicines/js/5color_change.js' %}" defer></script>
+
 {% endblock %}
