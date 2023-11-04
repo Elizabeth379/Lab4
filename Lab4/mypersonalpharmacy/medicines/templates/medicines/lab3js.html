@@ -1,0 +1,36 @@
+{% extends 'medicines/layout.html' %}
+{% load static %}
+{% block title %}Лабораторная №3{% endblock %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/2bannersstyles.css' %}">
+</head>
+
+{% block content %}
+    <form id="adminForm">
+        <label for="interval">Промежуток времени (в секундах): </label>
+        {% if user.is_superuser %}
+            <input type="number" id="interval" name="interval" min="1" value="5">
+            <button type="button" onclick="updateRotationInterval()">Обновить</button>
+        {% else %}
+            <input type="number" id="interval" name="interval" value="5" disabled>
+        {% endif %}
+    </form>
+
+<div class="banner-container">
+    <div class="banner" onclick="openLink('https://en.wikipedia.org/wiki/List_of_dragons_in_mythology_and_folklore')">
+        <img src="{% static 'medicines/images/banner1.jpg' %} " alt="Banner 1">
+    </div>
+    <div class="banner" onclick="openLink('https://puzzlegarage.com/puzzle/3992/')">
+        <img src="{% static 'medicines/images/banner2.jpg' %} " alt="Banner 2">
+    </div>
+    <!-- Add more banners as needed -->
+</div>
+
+    <script>
+        // Передача значения superuser в JavaScript
+        const isAdmin = {{ user.is_superuser|lower }};
+    </script>
+
+    <script src="{% static 'medicines/js/2banners.js' %}" defer></script>
+{% endblock %}

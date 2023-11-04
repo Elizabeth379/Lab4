@@ -17,6 +17,10 @@ class Certificate(TemplateView):
     template_name = 'medicines/certificate.html'
 
 
+class Lab3js(TemplateView):
+    template_name = 'medicines/lab3js.html'
+
+
 class Lab2css(TemplateView):
     template_name = 'medicines/lab2css.html'
 

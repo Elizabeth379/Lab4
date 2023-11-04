@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.banner-container {
+    display: flex;
+    overflow: hidden;
+}
+
+.banner {
+    cursor: pointer;
+    transition: opacity 0.5s;
+}
+
+.banner img {
+    width: 100%;
+}
+
+.admin-form {
+    margin-bottom: 20px;
+}
