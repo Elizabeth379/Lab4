@@ -25,6 +25,10 @@ class Lab2css(TemplateView):
     template_name = 'medicines/lab2css.html'
 
 
+class Task10_1(TemplateView):
+    template_name = 'medicines/task10_1.html'
+
+
 class Employees(ListView):
     model = Employee
     template_name = 'medicines/employees.html'

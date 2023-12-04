@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Аптека</title>
+</head>
+<body>
+    <h1>Аптека</h1>
+    <div id="output"></div>
+
+    <script>
+        // Базовый класс "Медикамент"
+        function Medicament(name) {
+            this.name = name;
+
+            // Геттер
+            this.getName = function() {
+                return this.name;
+            };
+
+            // Сеттер
+            this.setName = function(newName) {
+                this.name = newName;
+            };
+
+            // Функция 1: Отгрузка товара на полки
+            this.function1 = function() {
+                return `Произведена отгрузка товара ${this.name} на полки аптеки`;
+            };
+
+            // Функция 2: Подсчет стоимости
+            this.function2 = function() {
+                return `Подсчитана стоимость товара ${this.name} в аптеке`;
+            };
+
+            // Функция 3 (для декоратора): Регистрация продажи
+            this.function3 = function() {
+                return `Зарегистрирована продажа товара ${this.name} в аптеке`;
+            };
+
+            // Функция 4: Установка срока годности
+            this.function4 = function() {
+                return `Установлен срок годности для товара ${this.name} в аптеке`;
+            };
+        }
+
+        // Класс-наследник "Медикамент для фармацевтов"
+        function PharmaceuticalProduct(name, description) {
+            Medicament.call(this, name); // Вызов конструктора базового класса
+
+            this.description = description;
+
+            // Геттер для описания
+            this.getDescription = function() {
+                return this.description;
+            };
+
+            // Сеттер для описания
+            this.setDescription = function(newDescription) {
+                this.description = newDescription;
+            };
+
+            // Функция 5: Покупка медикамента
+            this.function5 = function() {
+                return `Клиент приобрел медикамент ${this.name} (${this.description}) в аптеке`;
+            };
+        }
+
+        // Прототипное наследование (функциональный стиль)
+        PharmaceuticalProduct.prototype = Object.create(Medicament.prototype);
+
+        // Создание экземпляра медикамента
+        var medicament = new Medicament("Анальгин");
+
+        // Создание экземпляра медикамента для фармацевтов
+        var pharmaceuticalProduct = new PharmaceuticalProduct("Аспирин", "Противовоспалительное средство");
+
+        // Демонстрация работы геттеров и сеттеров
+        medicament.setName("Ибупрофен");
+        pharmaceuticalProduct.setDescription("Обезболивающее средство");
+
+        // Демонстрация вызова функций
+        var output = "Медикамент: " + medicament.getName() + "<br>";
+        output += "Медикамент для фармацевтов: " + pharmaceuticalProduct.getName() + "<br>";
+        output += "Описание: " + pharmaceuticalProduct.getDescription() + "<br>";
+
+        output += medicament.function1() + "<br>";
+        output += medicament.function2() + "<br>";
+        output += pharmaceuticalProduct.function5() + "<br>";
+
+        // Декоратор для функции function3
+        function decorator(func) {
+            return function() {
+                return "Использован декоратор: " + func();
+            };
+        }
+
+        var decoratedFunction3 = decorator(pharmaceuticalProduct.function3);
+        output += decoratedFunction3() + "<br>";
+
+        document.getElementById("output").innerHTML = output;
+    </script>
+</body>
+</html>

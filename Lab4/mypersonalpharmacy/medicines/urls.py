@@ -27,5 +27,6 @@ urlpatterns = [
     path('news/in_news/', views.InNews.as_view(), name='in_news'),
     path('lab2css/', views.Lab2css.as_view(), name='lab2css'),
     path('certificate/', views.Certificate.as_view(), name='certificate'),
-    path('lab3js/', views.Lab3js.as_view(), name='lab3js')
+    path('lab3js/', views.Lab3js.as_view(), name='lab3js'),
+    path('task10_1/', Task10_1.as_view(), name='task10_1')
 ]
