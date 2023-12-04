@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Лабораторная работа 3</title>
+</head>
+<body>
+    <h1>Лабораторная работа 3</h1>
+    <div id="output"></div>
+
+    <script>
+        class Medicament {
+            constructor(name) {
+                this.name = name;
+            }
+
+            getName() {
+                return this.name;
+            }
+
+            setName(newName) {
+                this.name = newName;
+            }
+
+            function1() {
+                return `Произведена отгрузка товара ${this.name} на полки аптеки`;
+            }
+
+            function2() {
+                return `Подсчитана стоимость товара ${this.name} в аптеке`;
+            }
+
+            function3() {
+                return `Зарегистрирована продажа товара ${this.name} в аптеке`;
+            }
+
+            function4() {
+                return `Установлен срок годности для товара ${this.name} в аптеке`;
+            }
+        }
+
+        class PharmaceuticalProduct extends Medicament {
+            constructor(name, description) {
+                super(name);
+                this.description = description;
+            }
+
+            getDescription() {
+                return this.description;
+            }
+
+            setDescription(newDescription) {
+                this.description = newDescription;
+            }
+
+            function5() {
+                return `Клиент приобрел медикамент ${this.name} (${this.description}) в аптеке`;
+            }
+        }
+
+        // Создание экземпляра медикамента
+        var medicament = new Medicament("Анальгин");
+
+        // Создание экземпляра медикамента для фармацевтов
+        var pharmaceuticalProduct = new PharmaceuticalProduct("Аспирин", "Противовоспалительное средство");
+
+        // Демонстрация работы геттеров и сеттеров
+        medicament.setName("Ибупрофен");
+        pharmaceuticalProduct.setDescription("Обезболивающее средство");
+
+        // Демонстрация вызова функций
+        var output = "Медикамент: " + medicament.getName() + "<br>";
+        output += "Медикамент для фармацевтов: " + pharmaceuticalProduct.getName() + "<br>";
+        output += "Описание: " + pharmaceuticalProduct.getDescription() + "<br>";
+
+        output += medicament.function1() + "<br>";
+        output += medicament.function2() + "<br>";
+        output += pharmaceuticalProduct.function5() + "<br>";
+
+        // Декоратор для функции function3
+        function decorator(func) {
+            return function() {
+                return "Использован декоратор: " + func.call(this);
+            };
+        }
+
+        var decoratedFunction3 = decorator(pharmaceuticalProduct.function3);
+        output += decoratedFunction3() + "<br>";
+
+        document.getElementById("output").innerHTML = output;
+    </script>
+</body>
+</html>

@@ -28,5 +28,7 @@ urlpatterns = [
     path('lab2css/', views.Lab2css.as_view(), name='lab2css'),
     path('certificate/', views.Certificate.as_view(), name='certificate'),
     path('lab3js/', views.Lab3js.as_view(), name='lab3js'),
-    path('task10_1/', Task10_1.as_view(), name='task10_1')
+    path('task10_1/', Task10_1.as_view(), name='task10_1'),
+    path('task10_2/', Task10_2.as_view(), name='task10_2')
+
 ]
