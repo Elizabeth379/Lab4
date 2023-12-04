@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ассоциативные массивы: Кубики</title>
+</head>
+<body>
+    <form id="cubesForm">
+        <label for="cubeColor">Цвет кубика:</label>
+        <select id="cubeColor" required>
+            <option value="красный">Красный</option>
+            <option value="желтый">Желтый</option>
+            <option value="синий">Синий</option>
+            <option value="зеленый">Зеленый</option>
+        </select>
+        <br>
+
+        <label for="cubeSize">Размер кубика (в см):</label>
+        <input type="number" id="cubeSize" required>
+        <br>
+
+        <button type="submit">Добавить кубик</button>
+    </form>
+
+    <div id="results">
+        <h2>Результаты:</h2>
+        <ul id="cubesList"></ul>
+        <ul id="colorCountList"></ul>
+        <p id="totalVolume"></p>
+    </div>
+
+    <script>
+        const cubes = {};
+        let totalVolume = 0;
+
+        document.getElementById("cubesForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const cubeColor = document.getElementById("cubeColor").value;
+            const cubeSize = parseFloat(document.getElementById("cubeSize").value);
+
+            const cube = {
+                color: cubeColor,
+                size: cubeSize,
+            };
+
+            if (!cubes[cubeColor]) {
+                cubes[cubeColor] = {
+                    count: 0,
+                    totalVolume: 0,
+                };
+            }
+
+            cubes[cubeColor].count++;
+            cubes[cubeColor].totalVolume += Math.pow(cubeSize, 3);
+            totalVolume += Math.pow(cubeSize, 3);
+
+            document.getElementById("cubesList").innerHTML += `<li>${cubeColor} кубик размером ${cubeSize} см</li>`;
+            updateColorCountList();
+
+            document.getElementById("totalVolume").textContent = `Суммарный объем всех кубиков: ${totalVolume} см³`;
+        });
+
+        function updateColorCountList() {
+            const colorCountList = document.getElementById("colorCountList");
+            colorCountList.innerHTML = "<h3>Количество кубиков каждого цвета:</h3>";
+
+            for (const color in cubes) {
+                const count = cubes[color].count;
+                colorCountList.innerHTML += `<li>${color}: ${count}</li>`;
+            }
+        }
+    </script>
+</body>
+</html>

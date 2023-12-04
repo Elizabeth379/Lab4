@@ -33,6 +33,10 @@ class Task10_2(TemplateView):
     template_name = 'medicines/task10_2.html'
 
 
+class Task11(TemplateView):
+    template_name = 'medicines/task11.html'
+
+
 class Employees(ListView):
     model = Employee
     template_name = 'medicines/employees.html'
