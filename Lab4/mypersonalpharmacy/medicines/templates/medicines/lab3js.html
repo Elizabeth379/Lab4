@@ -29,26 +29,54 @@
 
     <script src="{% static 'medicines/js/2banners.js' %}" defer></script>
 
-    <form id="styleForm">
-    <label>
-        <input type="checkbox" id="fontSizeCheckbox"> Изменить размер шрифта
-    </label>
-    <input type="number" id="fontSizeInput" placeholder="Размер шрифта" disabled>
-    <br>
-    <label>
-        <input type="checkbox" id="textColorCheckbox"> Изменить цвет текста
-    </label>
-    <input type="color" id="textColorInput" disabled>
-    <br>
-    <label>
-        <input type="checkbox" id="backgroundColorCheckbox"> Изменить цвет aside
-    </label>
-    <input type="color" id="backgroundColorInput" disabled>
-    <br>
-    <button type="button" onclick="applyStyles()">Применить</button>
-</form>
 
-    <script src="{% static 'medicines/js/5color_change.js' %}" defer></script>
+   <h1>Настройки страницы</h1>
+
+  <label>
+    <input type="checkbox" id="showSettingsCheckbox" checked> Показать настройки
+  </label>
+
+  <form id="settingsForm">
+    <label>
+      <input type="checkbox" id="fontSizeCheckbox"> Изменить размер шрифта
+    </label>
+    <br>
+    <label>
+      <input type="checkbox" id="textColorCheckbox"> Изменить цвет текста
+    </label>
+    <br>
+    <label>
+      <input type="checkbox" id="asideColorCheckbox"> Изменить цвет aside
+    </label>
+  </form>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var showSettingsCheckbox = document.getElementById('showSettingsCheckbox');
+      var settingsForm = document.getElementById('settingsForm');
+      var asideElement = document.querySelector('aside');
+
+      showSettingsCheckbox.addEventListener('change', function () {
+        settingsForm.style.display = showSettingsCheckbox.checked ? 'block' : 'none';
+      });
+
+      var fontSizeCheckbox = document.getElementById('fontSizeCheckbox');
+      var textColorCheckbox = document.getElementById('textColorCheckbox');
+      var asideColorCheckbox = document.getElementById('asideColorCheckbox');
+
+      fontSizeCheckbox.addEventListener('change', function () {
+        document.body.style.fontSize = fontSizeCheckbox.checked ? '20px' : '16px';
+      });
+
+      textColorCheckbox.addEventListener('change', function () {
+        document.body.style.color = textColorCheckbox.checked ? '#ff0000' : '#333';
+      });
+
+      asideColorCheckbox.addEventListener('change', function () {
+        asideElement.style.backgroundColor = asideColorCheckbox.checked ? '#e6e6e6' : '#16A741';
+      });
+    });
+  </script>
 
 
     <div>
