@@ -168,8 +168,9 @@ def pageNotFound(request, exception):
 
 def bying(request, bying_id):
     purchase = Medication.objects.get(pk=bying_id)
+    promocode = Promocode.objects.order_by('title')
 
-    return render(request, 'medicines/bying.html', {'title': 'Покупка', 'purchase': purchase})
+    return render(request, 'medicines/bying.html', {'title': 'Покупка', 'purchase': purchase, 'promocode': promocode})
 
 
 def thanks(request, thanks_id):

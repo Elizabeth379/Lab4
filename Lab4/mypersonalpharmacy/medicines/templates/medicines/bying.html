@@ -6,13 +6,64 @@
 <div>
     <h1 align="center">Хотите приобрести товар?</h1>
     <h3>Наименование: {{purchase}}</h3>
-    <h3>Цена: {{purchase.price}}</h3>
+    <p>Стоимость лекарств: $<span id="medcineCost">{{purchase.price}}</span></p>
+    <p>Итоговая стоимость: $<span id="totalCost">{{purchase.price}}</span></p>
     <h3>Поставщик: {{purchase.supplier}}</h3>
-    <h3>Аптека: </h3>
-    <a href="{{ purchase.get_absolute_url1 }}" class="btn btn-warning">Да</a>
-    <a href="{% url 'medlist' %}" class="btn btn-warning">Нет</a>
+    <h3>Аптека: Pharmacy</h3>
+
+
+    <div class="active-coupons" align="center">
+            <h2>Промокоды</h2>
+            <ul class="coupons-list" >
+                {% for p in promocode %}
+                {% if not p.archived %}
+                    <li class="coupon-item">
+                        <h3>{{ p.title }}</h3>
+                        <p>{{ p.description }}</p>
+                        <button data-discount="{{ p.discount }}" onclick="applyPromoCode(this)">Применить промокод</button>
+                    </li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+<div align="center">
+     <a  href="{{ purchase.get_absolute_url1 }}" class="agreement">Да</a>
+    <a href="{% url 'medlist' %}" class="agreement">Нет</a>
+</div>
 
 
 </div>
+
+    <script>
+        function applyPromoCode(button) {
+            var discount = button.getAttribute('data-discount');
+            var medcineCost = parseFloat(document.getElementById("medcineCost").textContent);
+
+                var discountedCost = medcineCost - (medcineCost * discount);
+                document.getElementById("totalCost").textContent = discountedCost.toFixed(2);
+                alert("Промокод принят!");
+        }
+    </script>
+
+    <style>
+        .agreement {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 10px;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        color: #fff;
+        background-color: #007bff;
+        border: 2px solid #007bff;
+        border-radius: 5px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .agreement:hover {
+        background-color: #0056b3;
+        color: #fff;
+    }
+    </style>
 
 {% endblock %}

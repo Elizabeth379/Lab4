@@ -120,6 +120,19 @@ class Coupon(models.Model):
         return self.title
 
 
+class Promocode(models.Model):
+    title = models.CharField(max_length=100, verbose_name='Название купона')
+    description = models.TextField(blank=True, verbose_name='Описание')
+    discount = models.FloatField(verbose_name='Процент скидки')
+
+    class Meta:
+        verbose_name = 'Promocode'
+        verbose_name_plural = 'Promocodes'
+
+    def __str__(self):
+        return self.title
+
+
 class FAQ(models.Model):
     question = models.CharField(max_length=100, verbose_name='Вопрос')
     answer = models.TextField(blank=True, verbose_name='Ответ')
