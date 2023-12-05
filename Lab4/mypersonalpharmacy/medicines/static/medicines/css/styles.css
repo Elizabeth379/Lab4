@@ -997,3 +997,21 @@ th:first-child, td:first-child {
         transform-origin: 0 0; /* Устанавливает начальную точку масштабирования в верхний левый угол */
     }
 }
+
+.limg {
+      position: absolute;
+      top: 500px;
+      left: 500px;
+      width: 200px;
+      height: 200px;
+      border: 2px solid #333;
+    }
+
+    .vdimg {
+      position: absolute;
+      top: 500px;
+      left: 1600px;
+      width: 200px;
+      height: 200px;
+      border: 2px solid #333;
+    }

@@ -9,6 +9,11 @@
         <img src="{% static 'medicines/images/banner.png' %} " title = "Баннер компании" />
     </center>
 
+    <div id="scroll-container">
+        <img src="{% static 'medicines/images/photos/l.jpg' %}" alt="Left" id="left_img" class="limg">
+        <img src="{% static 'medicines/images/photos/vd.jpg' %}" alt="Right" id="right_img" class="vdimg">
+    </div>
+
     <div class="last-article-info">
         <h2>Последняя новость</h2>
       {% for p in posts %}
