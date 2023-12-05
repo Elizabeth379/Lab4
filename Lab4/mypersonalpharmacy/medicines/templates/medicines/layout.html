@@ -12,6 +12,7 @@
     <link rel="shortcut icon" href="{% static 'medicines/images/icon.png' %}" type="image/x-icon"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400&display=swap">
     <script src="{% static 'medicines/js/script3.js' %}"></script>
+    <script src="{% static 'medicines/js/script1.js' %}"></script>
 </head>
 <body translate = "yes">
     <nav>
@@ -39,7 +40,7 @@
     <aside>
         <img src="{% static 'medicines/images/logo.svg' %}" alt="Аптека">
         <span class="logo">Pharmacy</span>
-        <p>Наше время: {% now "Y-m-d H:i:s" %}</p>
+        <p id="current-time">Наше время</p>
         <script src="{% static 'medicines/js/8countdown.js' %}" defer></script>
         <p id="countdown"></p>
         <script src="{% static 'medicines/js/for8clear_local_storage.js' %}" defer></script>
