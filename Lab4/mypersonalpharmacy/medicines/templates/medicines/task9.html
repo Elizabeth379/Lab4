@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Квадратная таблица (массив)</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid #000;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .highlight-pink {
+            background-color: pink;
+        }
+
+        .highlight-purple {
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+<h1>Квадратная таблица</h1>
+<button id="transposeButton" disabled>Транспонировать</button>
+<label for="maxHighlight">Макс. выделений в строке/столбце:</label>
+<input type="number" id="maxHighlight" value="1" disabled>
+<button id="addRowButton" disabled>Добавить строку</button>
+<button id="addColumnButton" disabled>Добавить столбец</button>
+<label for="tableSize">Размер таблицы:</label>
+<input type="number" id="tableSize" value="3">
+<button id="createTableButton">Создать таблицу</button>
+<table id="table" style="display: none;"></table>
+
+<script>
+    const table = document.getElementById("table");
+    const transposeButton = document.getElementById("transposeButton");
+    const maxHighlightInput = document.getElementById("maxHighlight");
+    const addRowButton = document.getElementById("addRowButton");
+    const addColumnButton = document.getElementById("addColumnButton");
+    const createTableButton = document.getElementById("createTableButton");
+    const tableSizeInput = document.getElementById("tableSize");
+    let currentMaxHighlight = 1;
+
+    function createTable(size) {
+        // Очищаем содержимое элементов таблицы
+        table.innerHTML = "";
+        for (let i = 0; i < size; i++) {
+            const row = document.createElement("tr");
+            for (let j = 0; j < size; j++) {
+                const cell = document.createElement("td");
+                cell.textContent = Math.floor(Math.random() * 100);
+                // Ячейка добавляется в строку
+                row.appendChild(cell);
+            }
+            // Строка добавляется в таблицу
+            table.appendChild(row);
+        }
+        table.style.display = "table";
+        transposeButton.removeAttribute("disabled");
+        maxHighlightInput.removeAttribute("disabled");
+        addRowButton.removeAttribute("disabled");
+        addColumnButton.removeAttribute("disabled");
+    }
+
+    function highlightCell(cell) {
+        const maxAllowedSelections = parseInt(maxHighlightInput.value, 10);
+        const selectedCells = Array.from(document.querySelectorAll(".highlight-pink, .highlight-purple"));
+
+        // Проверяем, если ячейка уже выделена, то снимаем выделение
+        if (cell.classList.contains("highlight-pink") || cell.classList.contains("highlight-purple")) {
+            cell.classList.remove("highlight-pink", "highlight-purple");
+        } else if (selectedCells.length < maxAllowedSelections) {
+            // Получаем индексы строки и столбца, в которых находится текущая ячейка
+            const selectedRowIndex = cell.parentElement.rowIndex;
+            const selectedColIndex = cell.cellIndex;
+            let canHighlight = true;
+
+            for (const selectedCell of selectedCells) {
+                const rowIndex = selectedCell.parentElement.rowIndex;
+                const colIndex = selectedCell.cellIndex;
+
+                // Проверяем соседство по горизонтали и нахождение в той же строке
+                if (Math.abs(selectedColIndex - colIndex) === 1 &&
+                    rowIndex === selectedRowIndex) {
+                    canHighlight = false;
+                    break;
+                }
+            }
+
+            if (canHighlight) {
+                // Вычисляем четная или нечетная ячейка
+                const isEven = (cell.cellIndex + cell.parentElement.rowIndex) % 2 === 0;
+                cell.classList.add(isEven ? "highlight-pink" : "highlight-purple");
+            }
+        }
+    }
+
+    function transposeTable() {
+        const rows = table.querySelectorAll("tr");
+        const rowCount = rows.length;
+        const colCount = rows[0].children.length;
+
+        if (rowCount !== colCount) {
+            alert("Таблица должна быть квадратной.");
+            return;
+        }
+
+        const newData = [];
+        for (let i = 0; i < rowCount; i++) {
+            newData.push([]);
+            for (let j = 0; j < colCount; j++) {
+                newData[i][j] = rows[j].children[i].innerHTML;
+            }
+        }
+
+        for (let i = 0; i < rowCount; i++) {
+            for (let j = 0; j < colCount; j++) {
+                rows[i].children[j].innerHTML = newData[i][j];
+            }
+        }
+    }
+
+    function addRow() {
+        const row = document.createElement("tr");
+        const cols = table.querySelector("tr").childElementCount;
+
+        for (let i = 0; i < cols; i++) {
+            const cell = document.createElement("td");
+            cell.textContent = Math.floor(Math.random() * 100); // Генерируем случайное число
+            row.appendChild(cell);
+        }
+
+        table.appendChild(row);
+    }
+
+    function addColumn() {
+        const rows = table.querySelectorAll("tr");
+
+        rows.forEach((row) => {
+            const cell = document.createElement("td");
+            cell.textContent = Math.floor(Math.random() * 100); // Генерируем случайное число
+            row.appendChild(cell);
+        });
+    }
+
+
+    table.addEventListener("click", (event) => {
+        if (event.target.tagName === "TD") {
+            highlightCell(event.target);
+        }
+    });
+
+    transposeButton.addEventListener("click", transposeTable);
+    addRowButton.addEventListener("click", addRow);
+    addColumnButton.addEventListener("click", addColumn);
+
+    createTableButton.addEventListener("click", () => {
+        const size = parseInt(tableSizeInput.value);
+        if (!isNaN(size) && size > 0) {
+            createTable(size);
+        }
+    });
+
+    maxHighlightInput.addEventListener("change", () => {
+        currentMaxHighlight = parseInt(maxHighlightInput.value, 10);
+    });
+    </script>
+</body>
+</html>

@@ -25,6 +25,10 @@ class Lab2css(TemplateView):
     template_name = 'medicines/lab2css.html'
 
 
+class Task9(TemplateView):
+    template_name = 'medicines/task9.html'
+
+
 class Task10_1(TemplateView):
     template_name = 'medicines/task10_1.html'
 

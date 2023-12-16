@@ -78,19 +78,4 @@
     });
   </script>
 
-
-    <div>
-    <label for="size">Выберите размер таблицы:</label>
-    <input type="number" id="size" min="1" value="3">
-    <button onclick="generateTable()">Сгенерировать таблицу</button>
-    <button onclick="transposeTable()">Транспонировать</button>
-    <label for="maxSelection">Максимальное количество выделенных ячеек в ряду/колонке:</label>
-    <input type="number" id="maxSelection" min="1" value="1">
-    <button onclick="addRow()">Добавить ряд</button>
-    <button onclick="addColumn()">Добавить колонку</button>
-    </div>
-
-    <table id="myTable"></table>
-
-    <script src="{% static 'medicines/js/9table.js' %}" defer></script>
 {% endblock %}
